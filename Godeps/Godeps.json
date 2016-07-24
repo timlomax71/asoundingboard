@@ -1,0 +1,6 @@
+{
+	"ImportPath": "github.com/asoundingboard",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v74",
+	"Deps": []
+}
