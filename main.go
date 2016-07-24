@@ -2,9 +2,10 @@ package main
 
 import (
 	"net/http"
+	"os"
 )
 
 func main() {
 	http.Handle("/", http.FileServer(http.Dir("./static")))
-	http.ListenAndServe(":8081", nil)
+	http.ListenAndServe(":"+os.Getenv("PORT"), nil)
 }
