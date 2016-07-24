@@ -1,7 +1,7 @@
 // JavaScript Document
 $(function() {
 	 "use strict";
-  var topoffset = 50; //variable for menu height
+  var topoffset = 40; //variable for menu height
   
     //Activate Scrollspy
   $('body').scrollspy({
@@ -24,7 +24,7 @@ $(function() {
   });
  
 //Use smooth scrolling when clicking on navigation
-  $('.navbar a[href*=#]:not([href=#]),.carousel-caption a[href*=#features],.totop').click(function() {
+  $('.navbar a[href*=#]:not([href=#]),.carousel-caption a[href*=#services],.totop').click(function() {
     if (location.pathname.replace(/^\//,'') === 
       this.pathname.replace(/^\//,'') && 
       location.hostname === this.hostname) {
@@ -42,7 +42,7 @@ $(function() {
   // sections animations
 
   $('nav.navbar-fixed-top').velocity('transition.flipBounceYIn'); 
-  $("#blog,#features,#portfolio,#about,#contact,#testimonials,.carousel-indicators,.carousel-control").velocity({ opacity: 0 });
+  $("#services,#about,#contact,#testimonials,.carousel-indicators,.carousel-control").velocity({ opacity: 0 });
 
   var ctrl = new ScrollMagic.Controller({
         globalSceneOptions: {
@@ -50,9 +50,7 @@ $(function() {
         }
     });
 
-    var scene2 = new ScrollMagic.Scene({triggerElement: '#features'}).setVelocity('#features',{opacity:1}).setVelocity('#features','transition.slideUpBigIn').addTo(ctrl);
-    var scene  = new ScrollMagic.Scene({triggerElement: '#blog'}).setVelocity('#blog',{opacity:1}).setVelocity('#blog','transition.slideLeftIn').addTo(ctrl);
-    var scene3 = new ScrollMagic.Scene({triggerElement: '#portfolio'}).setVelocity('#portfolio',{opacity:1}).setVelocity('#portfolio','transition.slideRightIn').addTo(ctrl);
+    var scene2 = new ScrollMagic.Scene({triggerElement: '#services'}).setVelocity('#services',{opacity:1}).setVelocity('#services','transition.slideUpBigIn').addTo(ctrl);
     var scene4 = new ScrollMagic.Scene({triggerElement: '#testimonials'}).setVelocity('#testimonials',{opacity:1}).setVelocity('#testimonials','transition.fadeIn').addTo(ctrl);
     var scene5 = new ScrollMagic.Scene({triggerElement: '#about'}).setVelocity('#about',{opacity:1}).setVelocity('#about','transition.slideDownBigIn',function(){$('#about .inner').countTo({formatter: function(value, options) {
                 var skill = $(this).data('skill');
@@ -90,19 +88,4 @@ $(function() {
 		 },
   	function(){$('.carousel-indicators,.carousel-control').velocity('reverse');}
   );
-  
-  $('body').append('<span class="hidden"> <a href="http://ayathemes.com">free animated single page websites</a></span>');
-  
-  $('#portfolio').mixItUp({
-	  animation: {
-		easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-	},
-	  selectors: {
-		target: '.mix',
-		filter: '.filter',
-	}
-	  });
-	  
-	 
-  	
 });
