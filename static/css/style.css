@@ -208,6 +208,11 @@ body
 {
 }
 
+.navbar.navbar-fixed-top
+{
+    background-color:white;
+}
+
 .nav.navbar-nav a 
 {
     color: black;
